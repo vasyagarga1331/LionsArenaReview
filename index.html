@@ -3,232 +3,251 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lions Arena — Столица мини-футбола и тенниса</title>
+<title>Lions Arena — оставить отзыв</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@800;900&family=Roboto+Condensed:wght@400;700&display=swap">
 <style>
 :root{
   --g:#339565;--g1:#30875C;--g2:#2D7752;--g3:#296748;--y:#FFED00;--ink:#2B2B2B;
-  --bg:#fff;--soft:#EEF4F0;--text:#2B2B2B;--mut:#56655c;--line:#cfdcd3;
+  --bg:#fff;--soft:#EEF4F0;--text:#2B2B2B;--mut:#5d6b63;--line:#cfdcd3;--card:#fff;
   --h:'Bitter','Rockwell','Georgia',serif;--b:'Roboto Condensed','Arial Narrow',Arial,sans-serif;
   box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d2420;--soft:#232c27;--text:#eef3ef;--mut:#a9b8ae;--line:#3a4840}}
-:root[data-theme="dark"]{--bg:#1d2420;--soft:#232c27;--text:#eef3ef;--mut:#a9b8ae;--line:#3a4840}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d2420;--soft:#232c27;--text:#eef3ef;--mut:#a9b8ae;--line:#3a4840;--card:#2a342e}}
+:root[data-theme="dark"]{--bg:#1d2420;--soft:#232c27;--text:#eef3ef;--mut:#a9b8ae;--line:#3a4840;--card:#2a342e}
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
-body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.55 var(--b);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;background:var(--bg);color:var(--text);font:400 18px/1.5 var(--b);-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--h);font-weight:900;line-height:1.08;margin:0}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--y);outline-offset:3px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
 
-.top{background:var(--g3);color:#fff;font-size:15px}
-.top .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
-.top a{text-decoration:none;margin-left:16px}
-.top a:hover{text-decoration:underline}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--g);color:#fff}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:900 22px var(--h)}
+.logo svg{width:38px;height:38px}
+nav a{margin-left:20px;text-decoration:none;font-weight:700}
+nav a:hover{text-decoration:underline}
 
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--g);color:#fff}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:900 24px var(--h)}
-.logo svg{width:42px;height:42px}
-nav>ul{list-style:none;margin:0;padding:0;display:flex;gap:4px}
-nav li{position:relative}
-nav a{display:block;padding:22px 14px;text-decoration:none;font-weight:700;font-size:18px}
-nav>ul>li:hover>a,nav>ul>li:focus-within>a{background:var(--g1)}
-nav li ul{display:none;position:absolute;left:0;top:100%;min-width:220px;list-style:none;margin:0;padding:6px 0;background:var(--g2);box-shadow:0 8px 20px rgba(0,0,0,.25)}
-nav li:hover>ul,nav li:focus-within>ul{display:block}
-nav li ul a{padding:10px 18px;font-weight:400}
-nav li ul a:hover{background:var(--g3)}
-.burger{display:none;background:none;border:2px solid #fff;color:#fff;font:700 16px var(--b);padding:8px 14px;border-radius:4px;cursor:pointer}
-
-.hero{position:relative;overflow:hidden;background:var(--g);color:#fff;padding:84px 0 96px}
-.hero::before{content:"";position:absolute;right:-150px;top:50%;width:560px;height:560px;margin-top:-280px;border:4px solid rgba(255,255,255,.2);border-radius:50%}
-.hero::after{content:"";position:absolute;right:130px;top:0;bottom:0;border-right:4px solid rgba(255,255,255,.2)}
+.hero{position:relative;overflow:hidden;background:var(--g);color:#fff;padding:72px 0 88px}
+.hero::before{content:"";position:absolute;right:-140px;top:50%;width:520px;height:520px;margin-top:-260px;border:4px solid rgba(255,255,255,.2);border-radius:50%}
+.hero::after{content:"";position:absolute;right:119px;top:0;bottom:0;border-right:4px solid rgba(255,255,255,.2)}
 .hero .wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(40px,7.5vw,84px);max-width:10em}
-.hero p{font-size:22px;max-width:28em;margin:22px 0 34px}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-block;background:var(--y);color:var(--ink);font:900 19px var(--h);padding:15px 28px;border-radius:4px;text-decoration:none;transform:skewX(-8deg);transition:background .15s}
+.hero h1{font-size:clamp(38px,7vw,76px);max-width:11em}
+.hero p{max-width:30em;font-size:21px;margin:20px 0 32px}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--y);color:var(--ink);font:900 20px var(--h);padding:16px 30px;border-radius:4px;text-decoration:none;transform:skewX(-8deg);transition:background .15s}
 .btn>span{display:inline-block;transform:skewX(8deg)}
 .btn:hover{background:#fff}
-.btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 3px #fff}
-.btn.o:hover{background:#fff;color:var(--g2)}
 
-.sec{padding:72px 0}
-.sec h2{font-size:clamp(30px,4.6vw,46px);margin-bottom:10px}
-.lead{color:var(--mut);max-width:34em;margin:0 0 36px}
+.form-sec{padding:64px 0;background:var(--soft)}
+.form-sec h2,.rev h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:8px}
+.lead{color:var(--mut);margin:0 0 32px;max-width:34em}
+form,.thanks{background:var(--card);border-top:8px solid var(--g);padding:32px;max-width:720px;box-shadow:0 2px 0 var(--line)}
+fieldset{border:0;padding:0;margin:0 0 28px}
+legend,label.t{font:800 18px var(--h);margin-bottom:10px;display:block;padding:0}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips label{cursor:pointer;border:2px solid var(--g);color:var(--g);padding:8px 16px;font-weight:700;border-radius:999px;transition:background .15s}
+.chips input:checked+label{background:var(--g);color:#fff}
+.chips input:focus-visible+label{outline:3px solid var(--y);outline-offset:2px}
+.balls{display:flex;gap:6px}
+.ball{background:none;border:0;padding:2px;cursor:pointer;color:var(--line);transition:color .15s,transform .15s}
+.ball svg{width:44px;height:44px;display:block}
+.ball.on{color:var(--g)}
+.ball:hover{transform:scale(1.12)}
+.hint{margin:8px 0 0;color:var(--mut);min-height:1.5em}
+textarea,input[type=text]{width:100%;font:inherit;color:var(--text);background:var(--bg);border:2px solid var(--line);border-radius:4px;padding:12px 14px}
+textarea{min-height:140px;resize:vertical}
+textarea:focus,input[type=text]:focus{border-color:var(--g);outline:0}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
+.count{text-align:right;color:var(--mut);font-size:15px}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-bottom:28px}
+.chk input{width:22px;height:22px;accent-color:var(--g);margin-top:2px;flex:none}
+.err{color:#c0392b;font-weight:700;margin:6px 0 0;min-height:0}
+:root[data-theme="dark"] .err{color:#ff8a7a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .err{color:#ff8a7a}}
+.invalid{border-color:#c0392b!important}
 
-.svc{list-style:none;margin:0;padding:0;border-top:3px solid var(--g)}
-.svc li{border-bottom:1px solid var(--line)}
-.svc a{display:grid;grid-template-columns:minmax(180px,1fr) 2fr auto;gap:20px;align-items:center;padding:22px 8px;text-decoration:none;transition:background .15s,padding .15s}
-.svc a:hover{background:var(--soft);padding-left:20px}
-.svc b{font:900 26px var(--h);color:var(--g)}
-.svc span{color:var(--mut)}
-.svc i{font:900 18px var(--h);font-style:normal;color:var(--g)}
-:root[data-theme="dark"] .svc b,:root[data-theme="dark"] .svc i{color:#6cc79b}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .svc b,:root:not([data-theme="light"]) .svc i{color:#6cc79b}}
+.thanks{display:none;background:var(--ink);color:#fff;border-top-color:var(--y)}
+.thanks.show{display:block;animation:pop .35s ease-out}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+.score{display:flex;align-items:center;gap:16px;font:900 clamp(64px,16vw,112px)/1 var(--h);color:var(--y);margin:8px 0 12px}
+.score small{font-size:.3em;color:#fff;font-family:var(--b);font-weight:700;max-width:7em;line-height:1.2}
+.thanks h3{font-size:30px;margin-bottom:8px}
+.thanks .btn{margin-top:22px}
 
-.news{background:var(--ink);color:#fff}
-.news .lead{color:#b9c6bd}
-.nl{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.ni{display:flex;flex-direction:column;border-left:6px solid var(--g);background:#363e39;padding:22px;text-decoration:none;transition:border-color .15s}
-.ni:hover{border-left-color:var(--y)}
-.ni time{color:var(--y);font-weight:700}
-.ni h3{font-size:21px;line-height:1.2;margin-top:8px}
-.more{display:inline-block;margin-top:28px;color:var(--y);font-weight:700}
+.rev{padding:64px 0;background:var(--ink);color:#fff}
+.rev .lead{color:#b9c6bd}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rc{border-left:6px solid var(--g);background:#363e39;padding:20px 22px}
+.rc .st{color:var(--y);font-weight:700;letter-spacing:2px}
+.rc p{margin:8px 0 14px}
+.rc b{color:#9fd8bb}
+footer{background:var(--g);color:#fff;padding:32px 0}
+footer .wrap{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+footer small{font-size:15px;opacity:.9}
 
-.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.about h2{margin-bottom:18px}
-.about p{margin:0 0 16px;max-width:36em}
-.band{background:var(--y);color:var(--ink);padding:44px 0;text-align:center}
-.band p{font:900 clamp(28px,6vw,56px)/1.1 var(--h);margin:0}
-.band small{display:block;margin-top:10px;font:700 20px var(--b)}
-
-footer{background:var(--g);color:#fff;padding:48px 0 28px}
-.fg{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
-footer h3{font-size:20px;margin-bottom:10px}
-footer p{margin:0 0 6px}
-footer a{text-underline-offset:3px}
-.cp{margin-top:32px;padding-top:18px;border-top:1px solid rgba(255,255,255,.3);font-size:15px;opacity:.9}
-
-@media (max-width:900px){
-  .burger{display:block}
-  nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--g2);max-height:75vh;overflow:auto}
-  nav.open{display:block}
-  nav>ul{flex-direction:column;gap:0}
-  nav a{padding:13px 20px}
-  nav li ul{display:block;position:static;box-shadow:none;background:var(--g3);padding:0}
-  nav li ul a{padding:10px 20px 10px 36px}
-  .nl,.about,.fg{grid-template-columns:1fr}
-  .svc a{grid-template-columns:1fr auto;gap:4px 12px}
-  .svc span{grid-column:1}
-  .svc i{grid-row:1;grid-column:2}
-  .hero{padding:56px 0 68px}
-  .sec{padding:52px 0}
+@media (max-width:760px){
+  nav a:not(.keep){display:none}
+  .cards{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
+  form,.thanks{padding:22px 18px}
+  .hero{padding:48px 0 64px}
+  .ball svg{width:40px;height:40px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="lion" viewBox="0 0 100 100"><path fill="currentColor" d="M8 40 26 24 52 8 46 22C72 20 90 40 88 62 86 82 66 94 46 90 60 82 64 72 60 62 56 70 48 72 42 66L44 56 30 56 18 50Z"/><path fill="var(--g)" d="M52 30C74 36 80 54 68 72 72 54 64 42 52 30Z"/></symbol>
+  <symbol id="ball" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="currentColor"/><path fill="#fff" d="M24 14 33 20.5 29.5 31H18.5L15 20.5Z"/><path stroke="#fff" stroke-width="2.4" stroke-linecap="round" d="M24 14V6M33 20.5 41 18M29.5 31 35 38M18.5 31 13 38M15 20.5 7 18"/></symbol>
 </svg>
 
-<div class="top"><div class="wrap">
-  <span>Тел: <a href="tel:+37353355757" style="margin:0"><b>+373 (533) 5-57-57</b></a></span>
-  <span><a href="http://shop.lionsarena.md/">Магазин online</a><a href="http://eng.lionsarena.md">English</a></span>
-</div></div>
-
-<header><div class="wrap">
-  <a class="logo" href="#top"><svg aria-hidden="true"><use href="#lion"/></svg>Lions Arena</a>
-  <button class="burger" id="bg" aria-expanded="false" aria-controls="nv">Меню</button>
-  <nav id="nv" aria-label="Основное меню"><ul>
-    <li><a href="https://lionsarena.md/arena/">Арена</a><ul>
-      <li><a href="https://lionsarena.md/for-fans/">Посетителям</a></li>
-      <li><a href="https://lionsarena.md/careers/">Карьера</a></li>
-      <li><a href="http://shop.lionsarena.md/">Магазин online</a></li>
-      <li><a href="https://lionsarena.md/arena/%d1%81%d0%be%d0%b1%d1%8b%d1%82%d0%b8%d1%8f-%d0%bd%d0%b0-lions-arena/">События</a></li>
-      <li><a href="https://lionsarena.md/rating/">Рейтинг</a></li>
-      <li><a href="https://lionsarena.md/lions-cafe/">Lions Cafe</a></li></ul></li>
-    <li><a href="https://lionsarena.md/services/">Услуги</a><ul>
-      <li><a href="https://lionsarena.md/mini-footbal/">Мини-футбол</a></li>
-      <li><a href="https://lionsarena.md/tennis/">Теннис</a></li>
-      <li><a href="https://lionsarena.md/padel/">Padel теннис</a></li>
-      <li><a href="https://lionsarena.md/for-kids/">Детские секции</a></li>
-      <li><a href="https://lionsarena.md/begovie-dorogki/">Беговые дорожки</a></li></ul></li>
-    <li><a href="https://lionsarena.md/prices/">Тарифы</a><ul>
-      <li><a href="https://lionsarena.md/price-footbal/">Футбольные поля</a></li>
-      <li><a href="https://lionsarena.md/price-tennis/">Теннисные корты</a></li>
-      <li><a href="https://lionsarena.md/price-padel/">Padel теннис</a></li>
-      <li><a href="https://lionsarena.md/price-begovaya-dorogka/">Беговые дорожки</a></li></ul></li>
-    <li><a href="https://lionsarena.md/payments/">Оплата</a></li>
-    <li><a href="https://lionsarena.md/blog/">Новости</a><ul>
-      <li><a href="https://lionsarena.md/press-center/">Матч-центр</a></li>
-      <li><a href="https://lionsarena.md/about-us/">СМИ о нас</a></li></ul></li>
-  </ul></nav>
-</div></header>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><svg aria-hidden="true"><use href="#lion"/></svg>Lions Arena</a>
+    <nav><a href="#review">Отзывы игроков</a><a class="keep" href="#form">Оставить отзыв</a></nav>
+  </div>
+</header>
 
 <main id="top">
-<section class="hero"><div class="wrap">
-  <h1>Столица мини-футбола и тенниса</h1>
-  <p>Спорт — это жизнь, полная ярких эмоций и радости. Тренируйтесь, играйте и приводите семью.</p>
-  <div class="btns">
-    <a class="btn" href="https://lionsarena.md/prices/"><span>Тарифы</span></a>
-    <a class="btn o" href="#services"><span>Услуги</span></a>
+<section class="hero">
+  <div class="wrap">
+    <h1>Игра — это жизнь. Как прошла ваша?</h1>
+    <p>Расскажите, как вам в Lions Arena: на поле, на корте, в кафе. Это займёт минуту, а мы станем лучше.</p>
+    <a class="btn" href="#form"><span>Оставить отзыв</span></a>
   </div>
-</div></section>
+</section>
 
-<section class="sec" id="services"><div class="wrap">
-  <h2>Чем заняться на арене</h2>
-  <p class="lead">Профессионально оборудованные поля, корты и беговая дорожка для спортсменов и тех, кто только начинает.</p>
-  <ul class="svc">
-    <li><a href="https://lionsarena.md/mini-footbal/"><b>Мини-футбол</b><span>Игры с друзьями, детские праздники, турниры и корпоративные мероприятия</span><i>Подробнее</i></a></li>
-    <li><a href="https://lionsarena.md/tennis/"><b>Теннис</b><span>Профессионально оборудованные корты для тренировок и игры</span><i>Подробнее</i></a></li>
-    <li><a href="https://lionsarena.md/padel/"><b>Padel теннис</b><span>Новинка арены и отличная замена фитнес-клубу</span><i>Подробнее</i></a></li>
-    <li><a href="https://lionsarena.md/for-kids/"><b>Детские секции</b><span>Заниматься спортом можно начать с самого детства</span><i>Подробнее</i></a></li>
-    <li><a href="https://lionsarena.md/begovie-dorogki/"><b>Беговые дорожки</b><span>Профессиональная беговая дорожка для подготовки и разминки</span><i>Подробнее</i></a></li>
-  </ul>
-</div></section>
+<section class="form-sec" id="form">
+  <div class="wrap">
+    <h2>Ваш отзыв</h2>
+    <p class="lead">Выберите, где вы были, поставьте оценку и напишите пару слов.</p>
 
-<section class="sec news" id="news"><div class="wrap">
-  <h2>Последние события на арене</h2>
-  <p class="lead">Турниры, результаты и анонсы.</p>
-  <div class="nl">
-    <a class="ni" href="https://lionsarena.md/blog/"><time datetime="2026-10-06">6 октября 2026</time><h3>Lions Birthday Cup 2026: второй тур</h3></a>
-    <a class="ni" href="https://lionsarena.md/blog/"><time datetime="2026-10-05">5 октября 2026</time><h3>Lions Birthday Cup: первый тур подарил голы, драму и неожиданные результаты</h3></a>
-    <a class="ni" href="https://lionsarena.md/blog/"><time datetime="2026-09-21">21 сентября 2026</time><h3>ФК «Arion» — победитель Lions Summer Cup</h3></a>
+    <form id="f" novalidate>
+      <fieldset>
+        <legend>Где вы были?</legend>
+        <div class="chips" id="svc">
+          <input type="radio" name="svc" id="s1" value="Мини-футбол"><label for="s1">Мини-футбол</label>
+          <input type="radio" name="svc" id="s2" value="Падел-теннис"><label for="s2">Падел-теннис</label>
+          <input type="radio" name="svc" id="s3" value="Теннис"><label for="s3">Теннис</label>
+          <input type="radio" name="svc" id="s4" value="Кафе"><label for="s4">Кафе</label>
+          <input type="radio" name="svc" id="s5" value="Другое"><label for="s5">Другое</label>
+        </div>
+        <p class="err" id="e-svc" role="alert"></p>
+      </fieldset>
+
+      <fieldset>
+        <legend id="rl">Ваша оценка</legend>
+        <div class="balls" role="radiogroup" aria-labelledby="rl" id="balls"></div>
+        <p class="hint" id="rh" aria-live="polite">Нажмите на мяч</p>
+        <p class="err" id="e-rate" role="alert"></p>
+      </fieldset>
+
+      <fieldset>
+        <label class="t" for="txt">Что понравилось, что улучшить?</label>
+        <textarea id="txt" maxlength="800" placeholder="Например: отличное покрытие поля, но хотелось бы больше раздевалок"></textarea>
+        <div class="count"><span id="cnt">0</span> / 800</div>
+        <p class="err" id="e-txt" role="alert"></p>
+      </fieldset>
+
+      <div class="row">
+        <div><label class="t" for="nm">Имя (необязательно)</label><input type="text" id="nm" autocomplete="given-name"></div>
+        <div><label class="t" for="ct">Телефон или e-mail (необязательно)</label><input type="text" id="ct" autocomplete="email"></div>
+      </div>
+
+      <div class="chk">
+        <input type="checkbox" id="pub">
+        <label for="pub">Можно опубликовать мой отзыв на сайте</label>
+      </div>
+
+      <button class="btn" type="submit"><span>Отправить отзыв</span></button>
+    </form>
+
+    <div class="thanks" id="thanks" role="status" tabindex="-1">
+      <div class="score"><span id="sc">5 : 5</span><small>ваша оценка арене</small></div>
+      <h3>Отзыв отправлен</h3>
+      <p>Спасибо, что поделились мнением. Оно поможет сделать Lions Arena лучше.</p>
+      <button class="btn" type="button" id="again"><span>Написать ещё один</span></button>
+    </div>
   </div>
-  <a class="more" href="https://lionsarena.md/blog/">Все новости</a>
-</div></section>
+</section>
 
-<section class="sec"><div class="wrap about">
-  <div>
-    <h2>Для тех, кто хочет быть спортивным</h2>
-    <p><b>Lions Arena</b> — спортивный семейный клуб, где каждый может начать заниматься спортом и приобщить к нему детей. Для вашей семьи или компании мы организуем увлекательный отдых.</p>
-    <p>На полях арены можно играть с друзьями, проводить тренировки по футболу для детей и взрослых, детские праздники, турниры и корпоративные мероприятия.</p>
+<section class="rev" id="review">
+  <div class="wrap">
+    <h2>Что говорят игроки</h2>
+    <p class="lead">Примеры отзывов. Замените их на настоящие.</p>
+    <div class="cards">
+      <article class="rc"><div class="st" aria-label="5 из 5">★★★★★</div><p>Покрытие ровное, свет хороший. Играли вдесятером в мини-футбол, поле бронировали без проблем.</p><b>Андрей, мини-футбол</b></article>
+      <article class="rc"><div class="st" aria-label="5 из 5">★★★★★</div><p>Впервые попробовала падел. Тренер объяснил всё с нуля, через час уже играли матч.</p><b>Марина, падел-теннис</b></article>
+      <article class="rc"><div class="st" aria-label="4 из 5">★★★★☆</div><p>После игры хороший кофе и тёплая атмосфера. Хотелось бы больше мест у окна.</p><b>Игорь, кафе</b></article>
+    </div>
   </div>
-  <div>
-    <h2>Спорт, который развивается</h2>
-    <p>Проект направлен на развитие спорта в республике и популяризацию мини-футбола, большого тенниса, padel и лёгкой атлетики.</p>
-    <p>Современная инфраструктура позволяет проводить соревнования международного уровня и готовить спортсменов. Любители найдут тренера или займутся самостоятельно на профессиональной базе.</p>
-  </div>
-</div></section>
-
-<section class="band"><div class="wrap">
-  <p>Тренируйся! Играй! Выигрывай!</p>
-  <small>Мы делаем спорт интереснее</small>
-</div></section>
+</section>
 </main>
 
-<footer><div class="wrap">
-  <div class="fg">
-    <div>
-      <a class="logo" href="#top"><svg aria-hidden="true"><use href="#lion"/></svg>Lions Arena</a>
-      <p style="margin-top:12px">Спортивный комплекс</p>
-    </div>
-    <div>
-      <h3>Мы в Тирасполе</h3>
-      <p>Улица 9 января, 209</p>
-      <p><a href="http://www.lionsarena.md/map/">Показать на карте</a></p>
-    </div>
-    <div>
-      <h3>Контакты</h3>
-      <p><a href="tel:+37353355757">+373 (533) 5-57-57</a></p>
-      <p><a href="mailto:info@lionsarena.md">info@lionsarena.md</a></p>
-      <p><a href="https://lionsarena.md/contacts/">Обратная связь</a></p>
-      <p><a href="https://www.facebook.com/profile.php?id=100044343871644">Facebook</a> · <a href="http://www.instagram.com/lions__arena/">Instagram</a></p>
-    </div>
+<footer>
+  <div class="wrap">
+    <a class="logo" href="#top"><svg aria-hidden="true"><use href="#lion"/></svg>Lions Arena</a>
+    <small>Спортивный комплекс · lionsarena.md</small>
   </div>
-  <div class="cp">© 2026 Lions Arena. Спортивный комплекс.</div>
-</div></footer>
+</footer>
 
 <script>
 (function(){
-  var b=document.getElementById('bg'),n=document.getElementById('nv');
-  b.addEventListener('click',function(){
-    var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);
+  var $=function(i){return document.getElementById(i)};
+  var words=['','Плохо','Могло быть лучше','Нормально','Хорошо','Отлично'];
+  var rate=0,box=$('balls');
+  for(var i=1;i<=5;i++){
+    var b=document.createElement('button');
+    b.type='button';b.className='ball';b.dataset.v=i;
+    b.setAttribute('role','radio');b.setAttribute('aria-checked','false');
+    b.setAttribute('aria-label',i+' из 5: '+words[i]);
+    b.innerHTML='<svg aria-hidden="true"><use href="#ball"/></svg>';
+    box.appendChild(b);
+  }
+  function paint(n,hover){
+    [].forEach.call(box.children,function(el,k){el.classList.toggle('on',k<n)});
+    $('rh').textContent=n?n+' из 5: '+words[n]:'Нажмите на мяч';
+  }
+  box.addEventListener('click',function(e){
+    var t=e.target.closest('.ball');if(!t)return;
+    rate=+t.dataset.v;
+    [].forEach.call(box.children,function(el){el.setAttribute('aria-checked',el.dataset.v==rate)});
+    paint(rate);$('e-rate').textContent='';
   });
-  n.addEventListener('click',function(e){if(e.target.closest('a')&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  box.addEventListener('mouseover',function(e){var t=e.target.closest('.ball');if(t)paint(+t.dataset.v)});
+  box.addEventListener('mouseleave',function(){paint(rate)});
+  $('txt').addEventListener('input',function(){$('cnt').textContent=this.value.length;this.classList.remove('invalid');$('e-txt').textContent=''});
+  $('svc').addEventListener('change',function(){$('e-svc').textContent=''});
+
+  $('f').addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true,first=null;
+    var svc=document.querySelector('input[name=svc]:checked');
+    if(!svc){$('e-svc').textContent='Выберите, где вы были.';ok=false;first=first||$('s1')}
+    if(!rate){$('e-rate').textContent='Поставьте оценку от 1 до 5.';ok=false;first=first||box.firstChild}
+    if($('txt').value.trim().length<10){$('e-txt').textContent='Напишите хотя бы 10 символов.';$('txt').classList.add('invalid');ok=false;first=first||$('txt')}
+    if(!ok){first.focus();return}
+
+    var data={service:svc.value,rating:rate,text:$('txt').value.trim(),name:$('nm').value.trim(),contact:$('ct').value.trim(),publish:$('pub').checked};
+    /* Отправка: сейчас отзыв никуда не уходит.
+       Чтобы получать отзывы, подключите сервис форм:
+       fetch('ВАШ_АДРЕС',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}) */
+
+    $('sc').textContent=rate+' : 5';
+    $('f').style.display='none';
+    var th=$('thanks');th.classList.add('show');th.focus();
+    th.scrollIntoView({block:'center'});
+  });
+
+  $('again').addEventListener('click',function(){
+    $('f').reset();rate=0;paint(0);$('cnt').textContent='0';
+    [].forEach.call(box.children,function(el){el.setAttribute('aria-checked','false')});
+    $('thanks').classList.remove('show');$('f').style.display='';
+    $('f').scrollIntoView({block:'start'});
+  });
 })();
 </script>
 </body>
